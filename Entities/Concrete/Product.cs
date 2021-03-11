@@ -1,11 +1,11 @@
-﻿using Entities.Abstract;
+﻿using Core.Entities;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Entities.Concrete
 {
-    public class Product:IEntity                           // All classes and interfaces must be public. DON'T FORGET!
+    public class Product : IEntity                           // All classes and interfaces must be public. DON'T FORGET!
     {
         public int ProductId { get; set; }
         public int CategoryId { get; set; }

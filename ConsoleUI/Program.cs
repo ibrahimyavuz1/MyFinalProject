@@ -3,6 +3,7 @@ using DataAccess.Abstract;
 using DataAccess.Concrete.InMemory;
 using DataAccess.Concrete.EntityFramework;
 using System;
+using Entities.Concrete;
 
 namespace ConsoleUI
 {                  
@@ -14,10 +15,25 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
-            ProductManager productmanager = new ProductManager(new EfProductDal());
-            foreach (var product in productmanager.GetByUnitPrice(40, 100))
+            ProductTest();
+            //CategoryTest();
+        }
+
+        private static void CategoryTest()
+        {
+            CategoryManager categoryManager = new CategoryManager(new EfCategoryDal());
+            foreach (var category in categoryManager.GetAll())
             {
-                Console.WriteLine(product.ProductName);
+                Console.WriteLine(category.CategoryName);
+            }
+        }
+
+        private static void ProductTest()
+        {
+            ProductManager productmanager = new ProductManager(new EfProductDal());
+            foreach (var product in productmanager.GetProductDetails())
+            {
+                Console.WriteLine(product.ProductName+"/"+product.CategoryName);
             }
         }
     }
