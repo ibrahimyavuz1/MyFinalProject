@@ -7,6 +7,7 @@ using System.Text;
 
 namespace Core.Utilities.Interceptors
 {
+    //In Core layer add manage NuGet packages Autofac, Autofac.extras.DynamicProxy and Autofac.extension.DependencyInjection!
     public class AspectInterceptorSelector : IInterceptorSelector
     {
         public IInterceptor[] SelectInterceptors(Type type, MethodInfo method, IInterceptor[] interceptors)
